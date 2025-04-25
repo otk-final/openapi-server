@@ -1,4 +1,4 @@
-package v2.dto;
+package v2.base;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -10,17 +10,17 @@ import io.swagger.annotations.ApiModelProperty;
  * Created on 2025/4/22 17:11
  * Created by huangxy
  */
-@ApiModel
+@ApiModel(description = "接口标准响应")
 public class ApiResult <T>{
-
-    @ApiModelProperty(value = "业务错误信息")
-    private String err;
 
     @ApiModelProperty(value = "数据")
     private T data;
 
     @ApiModelProperty(value = "业务响应码")
     private String code;
+
+    @ApiModelProperty(value = "业务错误信息")
+    private String err;
 
     @ApiModelProperty(value = "业务响应信息")
     private String msg;
@@ -30,7 +30,7 @@ public class ApiResult <T>{
     }
 
     public void setErr(String err) {
-        this.err = err;
+        this.err = err;;
     }
 
     public T getData() {

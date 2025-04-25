@@ -1,11 +1,11 @@
-package v2.api;
+package v3.api;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
-import v2.base.ApiResult;
-import v2.base.PageData;
-import v2.dto.User;
+import v3.base.ApiResult;
+import v3.base.PageData;
+import v3.dto.User;
 
 import java.util.List;
 
@@ -16,42 +16,44 @@ import java.util.List;
  * Created on 2025/4/21 17:06
  * Created by huangxy
  */
-@Api(tags = {"UserController"})
+@Tag(name = "UserApi", description = "用户接口")
 @RestController
 public class UserController {
 
-    @ApiOperation(value = "添加用户", nickname = "add")
+    @Operation(description = "添加用户")
     @PostMapping("/user/add")
     public ApiResult<Long> add(@RequestBody User body) {
-        return null;
+        var result = new ApiResult<Long>();
+        result.setData(1000L);
+        return result;
     }
 
-    @ApiOperation(value = "修改用户")
+    @Operation(description = "修改用户")
     @PutMapping("/user/edit/{id}")
     public ApiResult<Long> edit(@PathVariable("id") Long id, @RequestBody User body) {
         return null;
     }
 
 
-    @ApiOperation(value = "删除用户")
+    @Operation(description = "删除用户")
     @DeleteMapping("/user/delete/{id}")
     public ApiResult<Boolean> delete(@PathVariable("id") Long id) {
         return null;
     }
 
-    @ApiOperation(value = "查询用户")
+    @Operation(description = "查询用户")
     @GetMapping("/user/detail/{id}")
-    public ApiResult<User> edit(@PathVariable("id") Long id) {
+    public ApiResult<User> edit(@PathVariable("id") Long id, @RequestParam("keyword") String keyword) {
         return null;
     }
 
-    @ApiOperation(value = "用户分页")
+    @Operation(description = "用户分页")
     @GetMapping(value = "/user/page")
     public ApiResult<PageData<User>> page(@RequestParam("size") Integer size, @RequestParam("page") Integer page) {
         return null;
     }
 
-    @ApiOperation(value = "用户列表")
+    @Operation(description = "用户列表")
     @GetMapping(value = "/user/list")
     public ApiResult<List<User>> list() {
         return null;

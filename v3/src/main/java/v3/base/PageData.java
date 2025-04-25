@@ -1,7 +1,6 @@
-package v2.dto;
+package v3.base;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,20 +12,19 @@ import java.util.List;
  * Created on 2025/4/22 17:17
  * Created by huangxy
  */
-@ApiModel(description = "分页数据")
+@Schema(description = "标准分页数据")
 public class PageData<T> implements Serializable {
 
-    @ApiModelProperty("列表")
+    @Schema(description = "数据")
     private List<T> entities;
 
-
-    @ApiModelProperty("每页条数")
+    @Schema(description = "条数")
     private Integer size;
 
-    @ApiModelProperty("页码")
+    @Schema(description = "页码")
     private Integer page;
 
-    @ApiModelProperty("总数")
+    @Schema(description = "总数")
     private Long total;
 
 

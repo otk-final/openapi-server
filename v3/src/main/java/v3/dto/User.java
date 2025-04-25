@@ -1,8 +1,7 @@
-package v2.dto;
+package v3.dto;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -16,40 +15,40 @@ import java.util.Map;
  * Created on 2025/4/22 15:56
  * Created by huangxy
  */
-@ApiModel(description = "用户")
+@Schema(description = "用户")
 public class User implements Serializable {
 
-    @ApiModelProperty(value = "ID")
+    @Schema(description = "ID")
     private Long id;
 
-    @ApiModelProperty(value = "名称")
+    @Schema(description = "名称")
     private String name;
 
-    @ApiModelProperty(value = "年龄")
+    @Schema(description = "年龄")
     private Integer age;
 
-    @ApiModelProperty(value = "时间戳")
+    @Schema(description = "时间戳")
     private Long timestamp;
 
-    @ApiModelProperty(value = "是否启用")
+    @Schema(description = "是否启用")
     private Boolean enable;
 
-    @ApiModelProperty(value = "生日")
+    @Schema(description = "生日")
     private LocalDate birthday;
 
-    @ApiModelProperty(value = "标签")
+    @Schema(description = "标签")
     private List<String> tags;
 
-    @ApiModelProperty(value = "集合")
+    @Schema(description = "集合")
     private List<Cat> cats;
 
-    @ApiModelProperty(value = "基础map")
+    @Schema(description = "基础map")
     private Map<String, String> kv;
 
-    @ApiModelProperty(value = "引用map")
+    @Schema(description = "引用map")
     private Map<String, Dog> gods;
 
-    @ApiModelProperty(value = "扩展信息")
+    @Schema(description = "扩展信息")
     private JsonNode profile;
 
 
