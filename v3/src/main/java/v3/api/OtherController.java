@@ -23,7 +23,7 @@ public class OtherController {
     @Operation(description = "响应基础类型")
     @GetMapping("/other/long")
     public String get() {
-        return null;
+        return "ABCD";
     }
 
     @Operation(description = "响应基础类型")
@@ -37,7 +37,7 @@ public class OtherController {
     public Set<Dog> multiplePathVariable(@PathVariable(name = "id") String id, @PathVariable(name = "type") String type) {
         var d = new Dog();
         d.setColor("yellow");
-        d.setNickname("孝天");
+        d.setNickname("孝天123");
         return Set.of(d);
     }
 

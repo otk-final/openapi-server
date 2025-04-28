@@ -18,13 +18,13 @@ public class ApiResult<T> implements Serializable {
     private T data;
 
     @Schema(description = "业务响应码")
-    private String code;
+    private String code = "";
 
     @Schema(description = "业务错误信息")
-    private String err;
+    private String err = "";
 
     @Schema(description = "业务响应信息")
-    private String msg;
+    private String msg = "";
 
 
     public String getErr() {

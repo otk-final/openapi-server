@@ -38,13 +38,13 @@ public class AnimalController {
     @Operation(description = "响应long")
     @PostMapping("/animal/cat/add")
     public Long addCat(@RequestBody Cat body) {
-        return null;
+        return Long.MAX_VALUE;
     }
 
     @Operation(description = "响应map", summary = "其他")
     @GetMapping("/animal/map/cats")
     public Map<String, Cat> mapCats() {
-        return null;
+        return Map.of("ssss", new Cat());
     }
 
 
@@ -54,10 +54,23 @@ public class AnimalController {
         return null;
     }
 
+    @Operation(description = "路径+Body")
+    @PostMapping("/animal/add/{kind}/dog")
+    public Dog addDog(@PathVariable("kind") String kind, @RequestBody Dog body) {
+        return null;
+    }
+
+
+    @Operation(description = "路径+Query")
+    @GetMapping("/animal/query/{kind}/dog")
+    public Dog searchDog(@PathVariable("kind") String kind, @RequestParam("name") String name, @RequestParam("color") String color) {
+        return null;
+    }
+
 
     @Operation(description = "响应Map泛型")
     @GetMapping("/animal/map/dogs")
-    public MapResult<Dog> mapDog(){
+    public MapResult<Dog> mapDog() {
         return null;
     }
 }

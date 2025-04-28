@@ -50,12 +50,12 @@ public class UserController {
     @Operation(description = "用户分页")
     @GetMapping(value = "/user/page")
     public ApiResult<PageData<User>> page(@RequestParam("size") Integer size, @RequestParam("page") Integer page) {
-        return null;
+        return new ApiResult<>();
     }
 
     @Operation(description = "用户列表")
     @GetMapping(value = "/user/list")
     public ApiResult<List<User>> list() {
-        return null;
+        return new ApiResult<>();
     }
 }
